@@ -1,0 +1,12 @@
+*   Set up proper interrupts as exceptions that do not set the IF flag.
+*   Implement first system call -> fork()
+*   Create nice names for most interrupt handlers.
+*   Why does my kernel go bananaz using 0x00100000 as startpoint but not 0x00200000 ?
+*   Get memory map for computer
+*   Get amount of physical memory in bootblock.s (int 0x15 0x0820) and store it some fancy place in memory for protected mode to grab it.
+*   vec32_handler: EOI before task switching starts. Can nested timer interrupts occur ? IF flag ?
+*   Set up level 3 segments in GDT.
+*   Make processor go to ring 3, then do a fork.
+*   Align all tss'es for 4096kb boundary.
+*   Implement day,month,year for get_date_and_time.
+*   Implement some sort of printk(fmt, ...). It must print text,hex and dec at least.

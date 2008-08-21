@@ -1,0 +1,23 @@
+main.o: src/init/main.c include/keyboard.h include/tty.h include/string.h \
+  include/console.h include/tty.h include/hi_interrupthandlers.h \
+  include/asmmacroes.h include/tasks.h include/asmmacroes.h \
+  include/time.h include/main.h include/mem.h
+tty.o: src/drivers/tty.c include/console.h include/tty.h include/string.h \
+  include/tty.h
+console.o: src/drivers/console.c include/asmmacroes.h include/console.h \
+  include/tty.h include/string.h
+keyboard.o: src/drivers/keyboard.c include/asmmacroes.h include/tty.h \
+  include/string.h include/keyboard.h
+hi_interrupthandlers.o: src/interrupts/hi_interrupthandlers.c \
+  include/keyboard.h include/tasks.h include/asmmacroes.h include/panic.h \
+  include/hi_interrupthandlers.h
+panic.o: src/kernel/panic.c include/print.h include/panic.h
+tasks.o: src/kernel/tasks.c include/stddef.h include/tasks.h \
+  include/asmmacroes.h include/print.h include/time.h include/mem.h
+mem.o: src/kernel/mem.c include/asmmacroes.h include/tasks.h \
+  include/asmmacroes.h include/print.h include/mem.h
+print.o: src/kernel/print.c include/tty.h include/string.h \
+  include/asmmacroes.h include/print.h
+time.o: src/kernel/time.c include/print.h include/asmmacroes.h \
+  include/tasks.h include/asmmacroes.h include/time.h
+string.o: src/bonlib/string.c include/string.h
