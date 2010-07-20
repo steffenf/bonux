@@ -107,7 +107,7 @@ loadsetup:
  mov    word    bp, sp
  push   word    0
  push   word    0
- mov    long    ecx,[0x9b00+0x1ce+0x8]
+ mov    long    ecx,[0x9b00+0x1be+0x8]
  inc    ecx
  push   long    ecx
  push   word    0x1000
