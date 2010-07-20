@@ -39,7 +39,7 @@ include .depend
 .PHONY: writetodisk
 writetodisk:
 	cat bin/bootblock.bin bin/bonuxkernel.bin > bin/bonux.bin
-	dd if=bin/bonux.bin of=/dev/sda2 
+	dd if=bin/bonux.bin of=/dev/sda1
 
 .PHONY: clean
 clean:
