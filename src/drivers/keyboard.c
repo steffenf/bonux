@@ -43,7 +43,9 @@ void read_keyboard()
     if(kb_char==0) {
         change_special_flags(kb_byte);
     } else {
-        tty_push(kb_char,CONSOLE_TTY);
+        /* echo keyboard input to console */
+        tty_pushwrite(kb_char,CONSOLE_TTY);
+        tty_pushread(kb_char,CONSOLE_TTY);
     }
 
 end:

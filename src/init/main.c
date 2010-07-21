@@ -34,7 +34,6 @@ int main(void)
     init_unix_time();
     register_interrupthandlers();
     insert_running_task(copy_current_task((unsigned long)init_task));
-    insert_running_task(copy_current_task((unsigned long)login_task));
     sti();
 
     for(;;) {
@@ -48,12 +47,21 @@ int main(void)
 
 static void init_task() 
 {
-    for(;;) {printk("init task");dumpcpu();chill(4000);}
+    char key;
+
+    for(;;) {
+        tty_read(&key,1,0);
+        if(key=='l') {
+            insert_running_task(copy_current_task((unsigned long)login_task));
+        }
+        chill(4000);
+    }
 }
 
 static void login_task() 
 {
-    for(;;) {printk("login task");dumpcpu();chill(4000);}
+    printk("login as: ");
+    for(;;);
 }
 
 static void getsysteminfo()

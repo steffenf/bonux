@@ -17,7 +17,7 @@ void init_console()
 
 void write_console(const struct tty_st* tty)
 {
-    switch(tty->buffer.buf[tty->buffer.head]) {
+    switch(tty->writebuffer.buf[tty->writebuffer.head]) {
         case '\r':
             currpos+=((COLUMNS<<1)-(currpos%(COLUMNS<<1)));
             break;
@@ -28,7 +28,7 @@ void write_console(const struct tty_st* tty)
             currpos+=(TAB_LENGTH<<1);
             break;
         default:
-            vgamem[currpos]=tty->buffer.buf[tty->buffer.head];
+            vgamem[currpos]=tty->writebuffer.buf[tty->writebuffer.head];
             currpos+=2;
             break;
     }
