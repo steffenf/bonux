@@ -8,6 +8,7 @@
 #define CONSOLE_PROMPT "Bonux console# "
 
 extern void init_console();
+extern void clear();
 extern void write_console(const struct tty_st* tty);
 
 #endif

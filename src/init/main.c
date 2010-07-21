@@ -36,11 +36,7 @@ int main(void)
     insert_running_task(copy_current_task((unsigned long)init_task));
     sti();
 
-    for(;;) {
-        printk("kernel process");
-        dumpcpu();
-        chill(4000);
-    }
+    for(;;) {}
 
     return 0;
 }
@@ -54,12 +50,13 @@ static void init_task()
         if(key==F1) {
             insert_running_task(copy_current_task((unsigned long)login_task));
         }
-        chill(4000);
+        chill(10);
     }
 }
 
 static void login_task() 
 {
+    clear();
     printk("login as: ");
     for(;;);
 }

@@ -8,12 +8,20 @@ static void update_cursor();
 static unsigned short int currpos=0;
 static unsigned char* vgamem=(unsigned char*)CONSOLE_SCREEN_MEM_BUF_START;
 
+
 void init_console() 
 {
     clear_screen();
     update_cursor();
         
 }
+
+void clear()
+{
+    clear_screen();
+    update_cursor();
+}
+
 
 void write_console(const struct tty_st* tty)
 {
@@ -41,7 +49,7 @@ void write_console(const struct tty_st* tty)
 }
 
 
-static void clear_screen()
+void clear_screen()
 {
     unsigned int i;
   

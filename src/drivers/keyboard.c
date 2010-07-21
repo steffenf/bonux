@@ -44,7 +44,7 @@ void read_keyboard()
         change_special_flags(kb_byte);
     } else {
         /* echo printable keyboard input to console */
-        if(kb_char < 0x3a) {
+        if(kb_byte < 0x3a) {
             tty_pushwrite(kb_char,CONSOLE_TTY);
         }
         tty_pushread(kb_char,CONSOLE_TTY);
