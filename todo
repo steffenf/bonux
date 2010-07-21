@@ -1,3 +1,4 @@
+*   Fix the async debug exception
 *   Set up proper interrupts as exceptions that do not set the IF flag.
 *   Implement first system call -> fork()
 *   Create nice names for most interrupt handlers.
