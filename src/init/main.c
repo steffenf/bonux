@@ -51,7 +51,7 @@ static void init_task()
 
     for(;;) {
         tty_read(&key,1,0);
-        if(key=='l') {
+        if(key==F1) {
             insert_running_task(copy_current_task((unsigned long)login_task));
         }
         chill(4000);
