@@ -52,6 +52,14 @@ __asm__("ljmp *%0"::"m"(tmp.a)); \
 #define get_gs(var) __asm__("mov %%gs,%0":"=r"(var));
 #define set_gs(var) __asm__("mov %0, %%gs"::"r"(var));
 
+/* Debug registers */
+#define get_dr0(var) __asm__("mov %%dr0,%0":"=r"(var));
+#define get_dr1(var) __asm__("mov %%dr1,%0":"=r"(var));
+#define get_dr2(var) __asm__("mov %%dr2,%0":"=r"(var));
+#define get_dr3(var) __asm__("mov %%dr3,%0":"=r"(var));
+#define get_dr6(var) __asm__("mov %%dr6,%0":"=r"(var));
+#define get_dr7(var) __asm__("mov %%dr7,%0":"=r"(var));
+
 /* Control and flag registers */
 #define set_cr0(var) __asm__("movl %0, %%cr0"::"r"(var));
 #define get_cr0(var) __asm__("movl %%cr0,%0":"=r"(var));

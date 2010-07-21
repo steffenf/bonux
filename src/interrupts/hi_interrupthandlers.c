@@ -32,6 +32,7 @@ void vec_0_handler()
 void vec_1_handler()
 {
     panic("Debug exception");
+   
 }
 
 void vec_2_handler()

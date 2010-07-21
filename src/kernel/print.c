@@ -47,6 +47,18 @@ void dumpcpu()
     printregister("cr0", reg);
     get_eflags(reg);
     printregister("eflags", reg);
+    get_dr0(reg);
+    printregister("dr0", reg);
+    get_dr1(reg);
+    printregister("dr1", reg);
+    get_dr2(reg);
+    printregister("dr2", reg);
+    get_dr3(reg);
+    printregister("dr3", reg);
+    get_dr6(reg);
+    printregister("dr6", reg);
+    get_dr7(reg);
+    printregister("dr7", reg);
     printk("\n");
 }
 
