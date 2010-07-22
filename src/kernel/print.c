@@ -1,4 +1,5 @@
 #include "tty.h"
+#include "tasks.h"
 #include "asmmacroes.h"
 
 #include "print.h"
@@ -60,6 +61,35 @@ void dumpcpu()
     get_dr7(reg);
     printregister("dr7", reg);
     printk("\n");
+}
+
+void dumptss() {
+    printregister("iomap", current->tss.iomap);
+    printregister("ldt_ss", current->tss.ldt_ss);
+    printregister("gs", current->tss.gs);
+    printregister("fs", current->tss.fs);
+    printregister("ds", current->tss.ds);
+    printregister("ss", current->tss.ss);
+    printregister("cs", current->tss.cs);
+    printregister("es", current->tss.es);
+    printregister("edi", current->tss.edi);
+    printregister("esi", current->tss.esi);
+    printregister("ebp", current->tss.ebp);
+    printregister("esp", current->tss.esp);
+    printregister("ebx", current->tss.ebx);
+    printregister("edx", current->tss.edx);
+    printregister("ecx", current->tss.ecx);
+    printregister("eax", current->tss.eax);
+    printregister("eflags", current->tss.eflags);
+    printregister("eip", current->tss.eip);
+    printregister("cr3", current->tss.cr3);
+    printregister("ss2", current->tss.ss2);
+    printregister("esp2", current->tss.esp2);
+    printregister("ss1", current->tss.ss1);
+    printregister("esp1", current->tss.esp1);
+    printregister("esp1", current->tss.esp1);
+    printregister("ss0", current->tss.ss0);
+    printregister("esp0", current->tss.esp0);
 }
 
 void printregister(const char* name, const unsigned long value) {

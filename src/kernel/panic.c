@@ -5,6 +5,7 @@
 void panic(const char* message)
 {
     dumpcpu();
+    dumptss();
     printk(message);
     for(;;);
 }

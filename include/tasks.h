@@ -25,6 +25,8 @@
 #define PITOSCILLATORFREQUENCY 1193180
 #define LATCH (PITOSCILLATORFREQUENCY/HERTZ)
 
+extern struct st_pcb* current;
+
 extern void register_tss();
 extern void init_scheduler();
 extern void schedule();

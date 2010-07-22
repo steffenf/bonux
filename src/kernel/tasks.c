@@ -5,7 +5,7 @@
 #include "mem.h"
 
 struct st_pcb tasks[MAX_TASKS]; 
-static struct st_pcb* current;
+struct st_pcb* current;
 unsigned long ticks;
 
 static void remove_running_task(const unsigned short pid);
@@ -21,6 +21,7 @@ void init_scheduler() {
         tasks[i].state = ZOMBIE;
         tasks[i].next = NULL;
         tasks[i].prev =  NULL;
+        tasks[i].tss.iomap = 0;
     }
 
     tasks[ADAMEVA_TASK].next    =   &tasks[ADAMEVA_TASK];
