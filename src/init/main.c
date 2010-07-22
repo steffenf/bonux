@@ -50,7 +50,6 @@ static void init_task()
         if(key==F1) {
             insert_running_task(copy_current_task((unsigned long)login_task));
         }
-        chill(10);
     }
 }
 

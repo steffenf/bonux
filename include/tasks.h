@@ -9,7 +9,7 @@
 #define INIT_TASK 1
 
 /* Uhm....Why not ? */
-#define MAX_TICKS 100
+#define MAX_TICKS 10
 
 /* Who on earth will *ever* need more than 50 processes ? */
 #define MAX_TASKS 50
